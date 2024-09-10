@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100vw;
+  height: 100vh;
+}
+td {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+}
+.box1 {
+  background-color: #3498db;
+}
+.box2 {
+  background-color: green;
+}
