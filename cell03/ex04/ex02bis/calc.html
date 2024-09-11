@@ -37,9 +37,9 @@
 
     <script>
       function calculate() {
-        const leftOperand = parseInt($("#leftOperand").val());
+        const leftOperand = parseFloat($("#leftOperand").val());
         const operator = $("#operator").val();
-        const rightOperand = parseInt($("#rightOperand").val());
+        const rightOperand = parseFloat($("#rightOperand").val());
 
         if (isNaN(leftOperand) || isNaN(rightOperand)) {
           console.log("Error :)");
@@ -47,15 +47,7 @@
           return;
         }
 
-        const leftValue = parseFloat(leftOperand);
-        const rightValue = parseFloat(rightOperand);
-
-        if (
-          isNaN(leftValue) ||
-          isNaN(rightValue) ||
-          leftValue < 0 ||
-          rightValue < 0
-        ) {
+        if (leftOperand < 0 || rightOperand < 0) {
           console.log("Error");
           alert("Error :(");
           return;
@@ -64,29 +56,29 @@
         let result;
         switch (operator) {
           case "+":
-            result = leftValue + rightValue;
+            result = leftOperand + rightOperand;
             break;
           case "-":
-            result = leftValue - rightValue;
+            result = leftOperand - rightOperand;
             break;
           case "*":
-            result = leftValue * rightValue;
+            result = leftOperand * rightOperand;
             break;
           case "/":
-            if (rightValue === 0) {
+            if (rightOperand === 0) {
               alert("It’s over 9000!");
               console.log("It’s over 9000!");
               return;
             }
-            result = leftValue / rightValue;
+            result = leftOperand / rightOperand;
             break;
           case "%":
-            if (rightValue === 0) {
+            if (rightOperand === 0) {
               alert("It’s over 9000!");
               console.log("It’s over 9000!");
               return;
             }
-            result = leftValue % rightValue;
+            result = leftOperand % rightOperand;
             break;
           default:
             alert("Error :(");
@@ -97,6 +89,12 @@
         console.log(`Result: ${result}`);
       }
 
+      function removeSpaces(event) {
+        const input = event.target;
+        input.value = input.value.replace(/\s+/g, "");
+      }
+
+      $("#leftOperand, #rightOperand").on("input", removeSpaces);
       $("#calculateBtn").on("click", calculate);
 
       setInterval(() => {
