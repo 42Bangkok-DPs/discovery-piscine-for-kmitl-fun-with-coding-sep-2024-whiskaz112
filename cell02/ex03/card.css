@@ -1,0 +1,50 @@
+.container {
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px auto;
+  padding: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+}
+
+.card .content span.name {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.card .content span.level {
+  color: gray;
+}
+
+.card .content span.description {
+  font-weight: 300;
+}
+
+.card .content img {
+  margin: 0 5px;
+}
+
+.footer a {
+  display: block;
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.footer a:hover {
+  background-color: #0056b3;
+}
