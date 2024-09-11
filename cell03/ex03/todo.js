@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .find((row) => row.startsWith("todo_list="));
     if (cookieString) {
       const todos = JSON.parse(cookieString.split("=")[1]);
-      todos.forEach((todo) => addTodoItem(todo));
+      todos.reverse().forEach((todo) => addTodoItem(todo));
     }
   }
 });
