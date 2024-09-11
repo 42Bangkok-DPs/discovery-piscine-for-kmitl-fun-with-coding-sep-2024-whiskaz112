@@ -22,12 +22,7 @@
   </head>
   <body>
     <div class="calculator">
-      <input
-        type="number"
-        id="leftOperand"
-        placeholder="Left Operand"
-        min="0"
-      />
+      <input type="text" id="leftOperand" placeholder="Left Operand" />
       <select id="operator">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -35,34 +30,24 @@
         <option value="/">/</option>
         <option value="%">%</option>
       </select>
-      <input
-        type="number"
-        id="rightOperand"
-        placeholder="Right Operand"
-        min="0"
-      />
-      <input type="button" value="Try me!" onclick="calculate()" />
+      <input type="text" id="rightOperand" placeholder="Right Operand" />
+      <input type="button" value="Try me!" id="calculateBtn" />
     </div>
 
     <script>
       function calculate() {
-        const leftOperand = parseInt(
-          document.getElementById("leftOperand").value,
-          10
-        );
-        const operator = document.getElementById("operator").value;
-        const rightOperand = parseInt(
-          document.getElementById("rightOperand").value,
-          10
-        );
+        const leftOperand = parseFloat(document.getElementById('leftOperand').value);
+        const operator = document.getElementById('operator').value;
+        const rightOperand = parseFloat(document.getElementById('rightOperand').value);
 
-        if (
-          isNaN(leftOperand) ||
-          isNaN(rightOperand) ||
-          leftOperand < 0 ||
-          rightOperand < 0
-        ) {
-          console.log("Error");
+        if (isNaN(leftOperand) || isNaN(rightOperand)) {
+          console.log("Error :)");
+          alert("Error :)");
+          return;
+        }
+
+        if (leftOperand < 0 || rightOperand < 0) {
+          console.log("Error :(");
           alert("Error :(");
           return;
         }
@@ -102,6 +87,14 @@
         alert(`Result: ${result}`);
         console.log(`Result: ${result}`);
       }
+
+      function removeSpaces(event) {
+        event.target.value = event.target.value.replace(/\s+/g, "");
+      }
+
+      document.getElementById('leftOperand').addEventListener('input', removeSpaces);
+      document.getElementById('rightOperand').addEventListener('input', removeSpaces);
+      document.getElementById('calculateBtn').addEventListener('click', calculate);
 
       setInterval(() => {
         alert("Please, use me...");
