@@ -1,0 +1,45 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.parallax {
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.middle-m {
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.mid-s {
+  background-color: white;
+  color: black;
+  font-size: 2em;
+  height: 600px;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg1 {
+  background-image: url("https://images8.alphacoders.com/133/1336966.jpeg");
+}
+
+.bg2 {
+  background-image: url("https://e0.pxfuel.com/wallpapers/749/896/desktop-wallpaper-2d-background-2d-nature.jpg");
+}
