@@ -23,12 +23,7 @@
   </head>
   <body>
     <div class="calculator">
-      <input
-        type="number"
-        id="leftOperand"
-        placeholder="Left Operand"
-        min="0"
-      />
+      <input type="text" id="leftOperand" placeholder="Left Operand" />
       <select id="operator">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -36,26 +31,30 @@
         <option value="/">/</option>
         <option value="%">%</option>
       </select>
-      <input
-        type="number"
-        id="rightOperand"
-        placeholder="Right Operand"
-        min="0"
-      />
+      <input type="text" id="rightOperand" placeholder="Right Operand" />
       <input type="button" value="Try me!" id="calculateBtn" />
     </div>
 
     <script>
       function calculate() {
-        const leftOperand = parseInt($("#leftOperand").val(), 10);
+        const leftOperand = parseInt($("#leftOperand").val());
         const operator = $("#operator").val();
-        const rightOperand = parseInt($("#rightOperand").val(), 10);
+        const rightOperand = parseInt($("#rightOperand").val());
+
+        if (isNaN(leftOperand) || isNaN(rightOperand)) {
+          console.log("Error :)");
+          alert("Error :)");
+          return;
+        }
+
+        const leftValue = parseFloat(leftOperand);
+        const rightValue = parseFloat(rightOperand);
 
         if (
-          isNaN(leftOperand) ||
-          isNaN(rightOperand) ||
-          leftOperand < 0 ||
-          rightOperand < 0
+          isNaN(leftValue) ||
+          isNaN(rightValue) ||
+          leftValue < 0 ||
+          rightValue < 0
         ) {
           console.log("Error");
           alert("Error :(");
@@ -65,29 +64,29 @@
         let result;
         switch (operator) {
           case "+":
-            result = leftOperand + rightOperand;
+            result = leftValue + rightValue;
             break;
           case "-":
-            result = leftOperand - rightOperand;
+            result = leftValue - rightValue;
             break;
           case "*":
-            result = leftOperand * rightOperand;
+            result = leftValue * rightValue;
             break;
           case "/":
-            if (rightOperand === 0) {
+            if (rightValue === 0) {
               alert("It’s over 9000!");
               console.log("It’s over 9000!");
               return;
             }
-            result = leftOperand / rightOperand;
+            result = leftValue / rightValue;
             break;
           case "%":
-            if (rightOperand === 0) {
+            if (rightValue === 0) {
               alert("It’s over 9000!");
               console.log("It’s over 9000!");
               return;
             }
-            result = leftOperand % rightOperand;
+            result = leftValue % rightValue;
             break;
           default:
             alert("Error :(");
@@ -106,4 +105,3 @@
     </script>
   </body>
 </html>
-
