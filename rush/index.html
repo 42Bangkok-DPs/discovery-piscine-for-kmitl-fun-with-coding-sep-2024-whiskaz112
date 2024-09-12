@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .navbar {
+      background-color: #333;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
+
+    h1, p {
+      color: #333;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="wipattan.html">wipattan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="vtechako.html">vtechako</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container text-center mt-5">
+    <h1>Welcome to Our Rush Project</h1>
+    <p>Explore the portfolios of our team members.</p>
+    <div class="row mt-4">
+      <div class="col-sm-6">
+        <a href="wipattan.html" class="btn btn-primary btn-block">View wipattan Portfolio</a>
+      </div>
+      <div class="col-sm-6">
+        <a href="vtechako.html" class="btn btn-success btn-block">View vtechako Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2024 Rush Project | <a href="#" style="color: white;">Contact Us</a>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
